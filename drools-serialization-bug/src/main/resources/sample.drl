@@ -1,0 +1,18 @@
+package com.sample.rules
+
+
+rule "Your First Rule"
+ruleflow-group "group1"
+    when
+        exists ( String(this == "Hello") or String(this == "World") )
+    then
+        System.out.println("Hello or World");
+end
+
+rule "Your Second Rule"
+ruleflow-group "group1"
+    when
+        $string: String(this == "Hello World")
+    then
+        System.out.println($string);
+end
